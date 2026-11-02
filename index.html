@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mini pouch catalog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="#beranda" class="logo">La Pouché<span></span></a>
+
+        <nav>
+            <a href="#beranda">Beranda</a>
+            <a href="#katalog">Katalog</a>
+            <a href="#tentang">Tentang Kami</a>
+        </nav>
+
+        <button class="cart-button" id="cartButton">
+            🛒 Keranjang (<span id="cartCount">0</span>)
+        </button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="beranda">
+        <div class="hero-content">
+            <p class="eyebrow">SIMPLE • CUTE • FUNCTIONAL</p>
+            <h1>Temukan pouch favoritmu.</h1>
+            <p>
+                Pouch praktis untuk menyimpan barang pentingmu
+                agar lebih rapi dan mudah dibawa ke mana saja.
+            </p>
+            <a href="#katalog" class="primary-button">
+                Lihat Produk →
+            </a>
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=900&q=85"
+                alt="Inspirasi produk pouch"
+            >
+        </div>
+    </section>
+
+    <!-- KATALOG -->
+    <main class="catalog" id="katalog">
+        <div class="section-heading">
+            <p class="eyebrow">OUR COLLECTION</p>
+            <h2>Katalog Produk</h2>
+            <p>Temukan produk yang cocok untuk kebutuhanmu.</p>
+        </div>
+
+        <!-- PENCARIAN -->
+        <div class="search-box">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Cari nama produk..."
+                aria-label="Cari produk"
+            >
+        </div>
+
+        <!-- FILTER KATEGORI -->
+        <div class="categories">
+            <button class="category-btn active" data-category="Semua">
+                Semua
+            </button>
+            <button class="category-btn" data-category="Mini Pouch">
+                Mini Pouch
+            </button>
+            <button class="category-btn" data-category="Makeup Pouch">
+                Makeup Pouch
+            </button>
+            <button class="category-btn" data-category="Travel Pouch">
+                Travel Pouch
+            </button>
+        </div>
+
+        <!-- PRODUK DARI JAVASCRIPT -->
+        <div class="product-grid" id="productGrid"></div>
+
+        <p class="empty-message" id="emptyMessage" hidden>
+            Produk tidak ditemukan.
+        </p>
+    </main>
+
+    <!-- TENTANG KAMI -->
+    <section class="about" id="tentang">
+        <p class="eyebrow">ABOUT US</p>
+        <h2>Kecil bentuknya, besar manfaatnya.</h2>
+        <p>
+            Pouchy menghadirkan pilihan pouch yang praktis,
+            menarik, dan mudah dibawa untuk menemani aktivitas
+            sehari-hari.
+        </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <a href="#beranda" class="logo">pouchy<span>.</span></a>
+        <p>© 2026 Pouchy. All rights reserved.</p>
+    </footer>
+
+    <!-- POPUP DETAIL PRODUK -->
+    <dialog id="productDialog" class="product-dialog">
+        <button
+            class="close-button"
+            id="closeDialog"
+            aria-label="Tutup detail produk"
+        >✕</button>
+
+        <div id="dialogContent"></div>
+    </dialog>
+
+    <!-- POPUP KERANJANG -->
+    <dialog id="cartDialog" class="product-dialog">
+        <button
+            class="close-button"
+            id="closeCart"
+            aria-label="Tutup keranjang"
+        >✕</button>
+
+        <div id="cartContent"></div>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
